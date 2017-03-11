@@ -16,6 +16,10 @@ public class Element {
 		position = p;
 	}
 	
+	public Element(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	//returns the position of the element
 	public Point getPosition() {
 		return position;
@@ -24,5 +28,9 @@ public class Element {
 	//sets the position of the element
 	public void setPosition(Point p) {
 		position = p;
+	}
+	
+	public String getType() {
+		return "Open";
 	}
 }

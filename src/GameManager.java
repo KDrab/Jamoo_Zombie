@@ -2,8 +2,8 @@ import java.util.List;
 
 public class GameManager {
 
-	//the game map - a 2D array of elements
-	private Element[][] map;
+	//the game map - a 2D array of elements and the GUI Map
+	private Map map;
 	//a list of all NPCs
 	private List<Player> npcs;
 	//players 1 and 2
@@ -11,11 +11,10 @@ public class GameManager {
 	private Player p2;
 	
 	//initialize a map of size width X height
-	public void initialize(int width, int hieght) {
-		// TODO - choose a percentage of walls (maybe make #define)
-		int wallPercentage = 10;
-		//generate the walls on the map
-		generateWalls(wallPercentage);
+	public void initialize(int width, int height) {
+		//create and initialize map
+		map = new Map(width, height);
+		
 		// TODO - choose a number of NPCs (maybe make #define)
 		int numNPCs = 10;
 		//generate the npcs on the map
@@ -23,20 +22,15 @@ public class GameManager {
 		//place the players
 		placePlayers();
 	}
-
-	//generate the locations of all walls, called by initailize
-	private void generateWalls(int numWalls) {
-		// TODO - generate the walls based on some pattern
-	}
 	
 	//generate the locations of all NPCs
 	private void generateNPCs(int numNPCs) {
-		// TODO - generate the NPCs in valid positions
+		// TODO - generate the NPCs in valid positions and put them in the map
 	}
 
 	//place the players on the map
 	private void placePlayers() {
-		// TODO - place the players in valid positions
+		// TODO - place the players in valid positions in the map
 	}
 
 	//move the npcs one tick
@@ -75,5 +69,9 @@ public class GameManager {
 	//place a bock in front of the given human player
 	private void placeBlock(Human h) {
 		// TODO - place a block element into the space in front of the human player
+	}
+
+	public Map getMap() {
+		return map;
 	}
 }
